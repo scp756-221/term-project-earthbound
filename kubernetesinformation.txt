@@ -1,0 +1,77 @@
+
+
+DOCKER STUFF, ASSIGNMENT 3
+Building and pushing a container image to GHCR
+/MY/PATH# docker image build --platform linux/amd64 --build-arg ASSIGN=a3 -t s2-standalone:v0.75 .
+# Checking that the image was created
+/MY/PATH# docker image ls s2-standalone
+# Logging in, tagging the image with the prefix for GHCR and your GitHub userid, and push it
+/home/k8s/s2/standalone# cat ../../cluster/ghcr.io-token.txt | docker login ghcr.io -u REGID --password-stdin
+/home/k8s/s2/standalone# docker image tag s2-standalone:v0.75 ghcr.io/REGID/s2-standalone:v0.75
+/home/k8s/s2/standalone# docker image push ghcr.io/REGID/s2-standalone:v0.75
+# Find the container image and make it public
+
+
+$$$$$$$$$$$$$$$$$$$
+SERVER SIDE
+
+Setting up a cluster
+# make -f eks.mak start
+Deleting a cluster
+# make -f VENDOR.mak stop
+Checking cluster information (general)
+# make -f allclouds.mak
+Checking cluster information (AWS)
+# eksctl get cluster --region us-west-2 -v 0
+
+
+Creating a namespace
+# for AWS EKS; similar for az/gcp
+/home/k8s#  kubectl config use-context aws756
+/home/k8s#  kubectl create ns c756ns
+/home/k8s#  kubectl config set-context aws756 --namespace=c756ns
+
+
+Istio Setup
+# switch to the EKS context
+/home/k8s# kubectl config use-context aws756
+/home/k8s# istioctl install -y --set profile=demo --set hub=gcr.io/istio-release
+/home/k8s# kubectl label namespace c756ns istio-injection=enabled
+# if you wish to remove the label
+/home/k8s# kubectl label namespace c756ns istio-injection-
+
+The setup in the assignment uses this command to build and push the images to the container registry for the kubernetes 
+/MY/PATH# make -f k8s.mak cri
+(This command will be changed)
+
+Running the services is done using the following command, this starts
+DB: The database service, probiding persistent storage to the two higher-level services, s1 and s2
+DynamoDB: An amazon service, called by DB to actually store the values.
+Gateway (gw): A link between s1 (Users) and s2 (Music) and the external world.
+S1 and S2: The user and music services
+/MY/PATH# make -f k8s.mak gw db s2
+
+There was also the loader service
+/MY/PATH# make -f k8s.mak loader
+
+
+Getting kubernetes cluster information
+# kubectl config get-contexts
+# kubectl get svc --all-namespaces | cut -c -140
+# kubectl -n istio-system get service istio-ingressgateway | cut -c -140
+
+Getting the logs of kubernetes 
+/My/PATH# kubectl logs --selector app=cmpt756s2 --container cmpt756s2 --tail=-1
+selector = pod name
+container = container name
+# Can also use k9s
+/MY/PATH# k9s
+(I'm pretty sure I had to run :namespace before this displayed anything)
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$
+CLIENT SIDE
+/home/k8s# cd mcli
+/home/k8s/mcli# make PORT=80 SERVER=EXTERNAL-IP run-mcli
+Here, EXTERNAL-IP is the DNS name 
