@@ -48,16 +48,6 @@ def readiness():
     return ""
 
 
-@bp.route('/', methods=['GET'])
-def list_all():
-    global database
-    response = {
-        "Count": len(database),
-        "Items":
-            [{'Song_name': value[0], 'Length_of_the_music': value[1],'Artist': value[2], 'Producers': value[3], 'Language': value[4], 'Rating_of_the_song': value[5], 'Released_Year': value[6],'Id': Id}
-             for Id, value in database.items()]
-    }
-    return response
 
     
 
