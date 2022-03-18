@@ -15,9 +15,7 @@ import pickle
 # The path to the file (CSV format) containing the sample data
 DB_PATH='song_info.csv'
 recommendation_model=pickle.load (open('model.pkl','rb'))
-# The unique exercise code
-# The EXER environment variable has a value specific to this exercise
-ucode = 's3'
+
 
 # The application
 
@@ -205,7 +203,8 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit(-1)
 
-    load_db()
+    # load_db()
+    ucode = 's3'
     app.logger.error("Unique code: {}".format(ucode))
     p = int(sys.argv[1])
     app.run(host='0.0.0.0', port=p, threaded=True)

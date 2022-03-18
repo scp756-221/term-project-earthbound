@@ -5,7 +5,8 @@ WORKDIR /code
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app.py unique_code.py ./
+COPY app.py .
+# COPY unique_code-tpl.py .
 
 EXPOSE 30001
 
