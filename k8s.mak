@@ -16,8 +16,8 @@
 
 # These will be filled in by template processor
 CREG=ghcr.io
-REGID=div9556
-# REGID=liamsparkles
+# REGID=div9556
+REGID=liamsparkles
 AWS_REGION=us-west-2
 
 # Keep all the logs out of main directory
