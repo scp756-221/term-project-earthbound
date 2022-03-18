@@ -8,9 +8,13 @@ import glob
 from flask import Blueprint
 from flask import Flask
 from flask import request
+from flask import Response
 import pickle
 # Local modules
+from prometheus_flask_exporter import PrometheusMetrics
+import requests
 
+import simplejson as json
 
 # The path to the file (CSV format) containing the sample data
 DB_PATH='song_info.csv'
@@ -19,7 +23,7 @@ recommendation_model=pickle.load (open('model.pkl','rb'))
 # The EXER environment variable has a value specific to this exercise
 ucode = 's3'
 music = {
-    "name": "http://cmpt756db:30005/api/v1/music",
+    "name": "http://cmpt756db:30001/api/v1/music",
     "endpoint": [
         "list_all",
         "get_song",
@@ -28,36 +32,48 @@ music = {
         
     ]
 }
+db = {
+    "name": "http://cmpt756db:30002/api/v1/datastore",
+    "endpoint": [
+        "read",
+        "write",
+        "delete",
+        "update"
+    ]
+}
+
+
 # The application
 app = Flask(__name__)
 bp = Blueprint('app', __name__)
+
+
+metrics = PrometheusMetrics(app)
+metrics.info('app_info', 'Song list process')
 database = {}
-def load_db():
-    global database
-    with open(DB_PATH, 'r') as inp:
-        rdr = csv.reader(inp)
-        next(rdr)  # Skip header line
-        for Song_name, Length_of_the_music, Artist, Producers, Language, Rating_of_the_song, Released_Year, Id, genre in rdr:
-            database[Id] = (Song_name, Length_of_the_music, Artist, Producers, Language, Rating_of_the_song, Released_Year, genre)
 
 @bp.route('/health')
+@metrics.do_not_track()
 def health():
-    return ""
+    return Response("", status=200, mimetype="application/json")
+
 
 @bp.route('/readiness')
+@metrics.do_not_track()
 def readiness():
-    return ""
+    return Response("", status=200, mimetype="application/json")
+
+
 @bp.route('/obtainall', methods=['GET'])
 def list_all():
-
-    global database
-    response = {
-        "Count": len(database),
-        "Items":
-            [{'Song_name': value[0], 'Length_of_the_music': value[1],'Artist': value[2], 'Producers': value[3], 'Language': value[4], 'Rating_of_the_song': value[5], 'Released_Year': value[6],'Id': Id,'genre': value[7]}
-             for Id, value in database.items()]
-    }
-    return response
+    headers = request.headers
+    # check header here
+    if 'Authorization' not in headers:
+        return Response(json.dumps({"error": "missing auth"}),
+                        status=401,
+                        mimetype='application/json')
+    # list all songs here
+    return {}
 
 @bp.route('/recommendation', methods=['POST'])
 def recommendation_fn():
@@ -69,13 +85,8 @@ def recommendation_fn():
         gender=0
     recommendation = recommendation_model.predict([[age,gender]])
     recommendation=recommendation[0].split(" ")
-    output_list=[]
-    for Id, value in database.items():
-        print(value[7], recommendation[0])
-        if value[7]==recommendation[0]:
-            output_list.append([{'Song_name': value[0], 'Length_of_the_music': value[1],'Artist': value[2], 'Producers': value[3], 'Language': value[4], 'Rating_of_the_song': value[5], 'Released_Year': value[6],'Id': Id,'genre': value[7]}])
     response = {
-            "output": output_list
+            "output": recommendation
             }
     return response
 
@@ -94,100 +105,52 @@ def recommendation_fn():
 
 @bp.route('/obtain/<Id>', methods=['GET'])
 def get_song(Id):
-    global database
-    if Id in database:
-        value = database[Id]
-        response = {
-            "Count": 1,
-            "Items":
-                [{'Song_name': value[0], 'Length_of_the_music': value[1],'Artist': value[2], 'Producers': value[3], 'Language': value[4], 'Rating_of_the_song': value[5], 'Released_Year': value[6],'Id': Id,'genre': value[7]}]
-        }
-    else:
-        response = {
-            "Count": 0,
-            "Items": []
-        }
-        return app.make_response((response, 404))
-    return response
+    headers = request.headers
+    # check header here
+    if 'Authorization' not in headers:
+        return Response(json.dumps({"error": "missing auth"}),
+                        status=401,
+                        mimetype='application/json')
+    payload = {"objtype": "music", "objkey": Id}
+    url = music['name'] + '/' + music['endpoint'][1]+'/'+Id
+    response = requests.get(
+        url,
+        headers={'Authorization': headers['Authorization']})
+    return (response.json())
 
 
 @bp.route('/create', methods=['POST'])
 def create_song():
-    global database
     try:
-        
         content = request.get_json()
         Artist = content['Artist']
-        Song_name= content['Song_name']
-        Length_of_the_music= content['Length_of_the_music']
-        Producers= content['Producers']
-        Language= content['Language']
-        Rating_of_the_song= content['Rating_of_the_song']
-        Released_Year= content['Released_Year'],
-        genre= content['genre']
+        Song_name= content['SongTitle']
     except Exception:
         return app.make_response(
             ({"Message": "Error reading arguments"}, 400)
             )
-    Id = len(database.items())+1
-    database[Id] = (Song_name, Length_of_the_music, Artist, Producers, Language, Rating_of_the_song, Released_Year,genre)
-    response = {
-        "Id": Id
-    }
+    url = music['name'] + '/'
+    response = requests.post(
+        url,
+        json={"Artist": Artist, "SongTitle": Song_name},
+        headers={'Authorization': 'Bearer A'})
     return response
 
-@bp.route('/update/<Id1>', methods=['PUT'])
-def update_song(Id1):
-    global database
-    if Id1 in database:
-        try:
-            content = request.get_json()
-            Artist = content['Artist']
-            Song_name= content['Song_name']
-            Length_of_the_music= content['Length_of_the_music']
-            Producers= content['Producers']
-            Language= content['Language']
-            Rating_of_the_song= content['Rating_of_the_song']
-            Released_Year= content['Released_Year']
-            genre= content['genre']
-        except Exception:
-            return app.make_response(
-            ({"Message": "Error reading arguments"}, 400)
-            )
-        Id = Id1
-        database[Id] = (Song_name, Length_of_the_music, Artist, Producers, Language, Rating_of_the_song, Released_Year,genre)
-        response = {
-            "Id": Id
-        }
-    else:
-        response = {
-            "Count": 0,
-            "Items": []
-        }
-        return app.make_response((response, 404))
-    return response
 
 @bp.route('/delete/<Id>', methods=['DELETE'])
 def delete_song(Id):
-    global database
-    if Id in database:
-        del database[Id]
-    else:
-        response = {
-            "Count": 0,
-            "Items": []
-        }
-        return app.make_response((response, 404))
-    return {}
-
-@bp.route('/deleteall', methods=['DELETE'])
-def deleteall_songs():
-    global database
-    id_list=[]
-    for Id, value in database.items():
-        id_list.append(Id)
-    for i in id_list:
-        del database[i]
+    headers = request.headers
+    # check header here
+    if 'Authorization' not in headers:
+        return Response(json.dumps({"error": "missing auth"}),
+                        status=401,
+                        mimetype='application/json')
+    payload = {"objtype": "music", "objkey": Id}
+    url = music['name'] + '/' + Id
+    response = requests.delete(
+        url,
+        headers={'Authorization': headers['Authorization']})
+    return (response.json())
     return {}
 
 @bp.route('/restore', methods=['GET'])
@@ -205,13 +168,13 @@ def restore_songs():
             database[Id] = (Song_name, Length_of_the_music, Artist, Producers, Language, Rating_of_the_song, Released_Year, genre)
     return database
 
-app.register_blueprint(bp, url_prefix='')
+app.register_blueprint(bp, url_prefix='/api/v1/songs_list/')
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit(-1)
 
     #load_db()
-    app.logger.error("Unique code: {}".format(ucode))
+    #app.logger.error("Unique code: {}".format(ucode))
     p = int(sys.argv[1])
     app.run(host='0.0.0.0', port=p, threaded=True)
