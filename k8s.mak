@@ -17,6 +17,7 @@
 # These will be filled in by template processor
 CREG=ghcr.io
 REGID=div9556
+# REGID=liamsparkles
 AWS_REGION=us-west-2
 
 # Keep all the logs out of main directory
@@ -336,7 +337,8 @@ $(LOG_DIR)/s3.repo.log: s3/Dockerfile s3/songs_list.py s3/recommendation_model.p
 	$(DK) push $(CREG)/$(REGID)/cmpt756s3:$(APP_VER_TAG) | tee $(LOG_DIR)/s3.repo.log
 
 # Build the db service
-$(LOG_DIR)/db.repo.log: db/Dockerfile db/app.py db/requirements.txt
+#TODO Needed change here
+$(LOG_DIR)/db.repo.log: db/Dockerfile db/app-tpl.py db/requirements.txt
 	make -f k8s.mak --no-print-directory registry-login
 	$(DK) build $(ARCH) -t $(CREG)/$(REGID)/cmpt756db:$(APP_VER_TAG) db | tee $(LOG_DIR)/db.img.log
 	$(DK) push $(CREG)/$(REGID)/cmpt756db:$(APP_VER_TAG) | tee $(LOG_DIR)/db.repo.log
