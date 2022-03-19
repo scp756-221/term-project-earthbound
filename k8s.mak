@@ -73,7 +73,7 @@ deploy: appns gw s1 s2 s3 db monitoring
 	$(KC) -n $(APP_NS) get gw,vs,deploy,svc,pods
 
 # --- rollout: Rollout new deployments of all microservices
-rollout: rollout-s1 rollout-s2 rollout-db
+rollout: rollout-s1 rollout-s2 rollout-s3 rollout-db
 
 # --- rollout-s1: Rollout a new deployment of S1
 rollout-s1: s1
