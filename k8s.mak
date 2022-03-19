@@ -136,6 +136,9 @@ log-s1:
 
 log-s2:
 	$(KC) -n $(APP_NS) logs deployment/cmpt756s2 --container cmpt756s2
+	
+log-s3:
+	$(KC) -n $(APP_NS) logs deployment/cmpt756s3 --container cmpt756s3
 
 log-db:
 	$(KC) -n $(APP_NS) logs deployment/cmpt756db --container cmpt756db
