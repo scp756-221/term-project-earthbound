@@ -1,7 +1,0 @@
-# Header for ConfigMap built from music.csv
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: song_info
-data:
-  song_info.csv: |
