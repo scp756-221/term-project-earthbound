@@ -1,10 +1,38 @@
 # SFU CMPT 756 main project directory
 
-This is the course repo for CMPT 756 (Spring 2022)
+This is the course repo for CMPT 756 Project(Spring 2022)
 
-You will find resources for your assignments and term project here.
+We have decided to implement a songs_list api in addition to the s1 and s2 services. We have made a lot of cross api calls between s3 and s2. Please find the below architecture for our microservices.
+![Mircroservice-Architecture_Designs1](https://user-images.githubusercontent.com/97494687/159112174-e87c2118-b40f-4160-bf4b-de9acf32af47.jpg)
+
+Completed Tasks:
+1) Building Microservices.
+2) Deploying containers on kubernetes service.
+
+To be completed:
+1)Load Testing using gatling.
+2)Metrics gathering using Prometheus.
+3)Dashboard building using grafana.
+4)Observing the failure points of a system.
 
 
+
+## Scripts to run the project
+1. Build and upload docker images to github.
+    - logs/s1.repo.log logs/s2-v1.repo.log logs/s3.repo.log logs/db.repo.log
+
+2. Start Amazon Kubernetes services.
+  - make -f eks.mak start
+
+3. Deploying the services on kubernetes.
+  - make -f k8s.mak gw db s2
+  
+4. Load initial data into DyanmoDB
+  - make -f k8s.mak loader
+ 
+5. Monitoring the services.
+  - Start k9s to track the health and staus of services.
+  
 ### 1. Instantiate the template files
 
 #### Fill in the required values in the template variable file
@@ -46,17 +74,12 @@ installed by running
 ~~~
 $ aws dynamodb list-tables
 ~~~
-
 The resulting output should include tables `User` and `Music`.
-
 ----
-
 
 ### Reference
 
 This is the tree of this repo. 
-
-
 The CI material at `ci` and `.github/workflows` are presently designed for Assignment 7 and the course's operation. They're not useable for you and should be removed. If you are ambitious or familiar with GitHub action, the one flow that may be _illustrative_ is `ci-to-dockerhub.yaml`. **It is not directly useable as you team repo will not use templates.**
 ```
 ├── ./.github
