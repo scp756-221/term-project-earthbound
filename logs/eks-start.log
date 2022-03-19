@@ -1,0 +1,67 @@
+2022-03-18 14:05:33 [ℹ]  eksctl version 0.77.0
+2022-03-18 14:05:33 [ℹ]  using region us-west-2
+2022-03-18 14:05:33 [ℹ]  setting availability zones to [us-west-2d us-west-2b us-west-2a]
+2022-03-18 14:05:33 [ℹ]  subnets for us-west-2d - public:192.168.0.0/19 private:192.168.96.0/19
+2022-03-18 14:05:33 [ℹ]  subnets for us-west-2b - public:192.168.32.0/19 private:192.168.128.0/19
+2022-03-18 14:05:33 [ℹ]  subnets for us-west-2a - public:192.168.64.0/19 private:192.168.160.0/19
+2022-03-18 14:05:33 [ℹ]  nodegroup "worker-nodes" will use "" [AmazonLinux2/1.21]
+2022-03-18 14:05:33 [ℹ]  using Kubernetes version 1.21
+2022-03-18 14:05:33 [ℹ]  creating EKS cluster "aws756" in "us-west-2" region with managed nodes
+2022-03-18 14:05:33 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
+2022-03-18 14:05:33 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-west-2 --cluster=aws756'
+2022-03-18 14:05:33 [ℹ]  CloudWatch logging will not be enabled for cluster "aws756" in "us-west-2"
+2022-03-18 14:05:33 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-west-2 --cluster=aws756'
+2022-03-18 14:05:33 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "aws756" in "us-west-2"
+2022-03-18 14:05:33 [ℹ]  
+2 sequential tasks: { create cluster control plane "aws756", 
+    2 sequential sub-tasks: { 
+        wait for control plane to become ready,
+        create managed nodegroup "worker-nodes",
+    } 
+}
+2022-03-18 14:05:33 [ℹ]  building cluster stack "eksctl-aws756-cluster"
+2022-03-18 14:05:33 [ℹ]  deploying stack "eksctl-aws756-cluster"
+2022-03-18 14:06:03 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:06:34 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:07:34 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:08:34 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:09:34 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:10:35 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:11:35 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:12:35 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:13:35 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:14:35 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:15:36 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:16:36 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:17:36 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:18:36 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-cluster"
+2022-03-18 14:20:38 [ℹ]  building managed nodegroup stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:20:39 [ℹ]  deploying stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:20:39 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:20:55 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:21:12 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:21:32 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:21:49 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:22:09 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:22:29 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:22:48 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:23:05 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:23:23 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:23:40 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:23:56 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:24:15 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:24:31 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-03-18 14:24:31 [ℹ]  waiting for the control plane availability...
+2022-03-18 14:24:31 [✔]  saved kubeconfig as "/root/.kube/config"
+2022-03-18 14:24:31 [ℹ]  no tasks
+2022-03-18 14:24:31 [✔]  all EKS cluster resources for "aws756" have been created
+2022-03-18 14:24:31 [ℹ]  nodegroup "worker-nodes" has 2 node(s)
+2022-03-18 14:24:31 [ℹ]  node "ip-192-168-1-157.us-west-2.compute.internal" is ready
+2022-03-18 14:24:31 [ℹ]  node "ip-192-168-92-202.us-west-2.compute.internal" is ready
+2022-03-18 14:24:31 [ℹ]  waiting for at least 2 node(s) to become ready in "worker-nodes"
+2022-03-18 14:24:31 [ℹ]  nodegroup "worker-nodes" has 2 node(s)
+2022-03-18 14:24:31 [ℹ]  node "ip-192-168-1-157.us-west-2.compute.internal" is ready
+2022-03-18 14:24:31 [ℹ]  node "ip-192-168-92-202.us-west-2.compute.internal" is ready
+2022-03-18 14:24:34 [ℹ]  kubectl command should work with "/root/.kube/config", try 'kubectl get nodes'
+2022-03-18 14:24:34 [✔]  EKS cluster "aws756" in "us-west-2" region is ready
+Context "CMPTLab@aws756.us-west-2.eksctl.io" renamed to "aws756".

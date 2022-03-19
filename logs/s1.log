@@ -1,0 +1,4 @@
+service/cmpt756s1 unchanged
+serviceaccount/svc-s1 unchanged
+deployment.apps/cmpt756s1 unchanged
+virtualservice.networking.istio.io/cmpt756s1 unchanged

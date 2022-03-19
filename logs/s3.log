@@ -1,0 +1,4 @@
+service/cmpt756s3 unchanged
+serviceaccount/svc-s3 unchanged
+destinationrule.networking.istio.io/cmpt756s3 unchanged
+virtualservice.networking.istio.io/cmpt756s3 unchanged

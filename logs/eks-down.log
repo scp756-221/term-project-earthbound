@@ -1,0 +1,56 @@
+2022-02-04 17:41:20 [ℹ]  eksctl version 0.77.0
+2022-02-04 17:41:20 [ℹ]  using region us-west-2
+2022-02-04 17:41:20 [ℹ]  1 nodegroup (worker-nodes) was included (based on the include/exclude rules)
+2022-02-04 17:41:20 [ℹ]  will drain 1 nodegroup(s) in cluster "aws756"
+2022-02-04 17:41:21 [ℹ]  cordon node "ip-192-168-20-217.us-west-2.compute.internal"
+2022-02-04 17:41:21 [ℹ]  cordon node "ip-192-168-41-87.us-west-2.compute.internal"
+2022-02-04 17:41:21 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:41:21 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:41:26 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:41:26 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:41:31 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:41:31 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:41:36 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:41:36 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:41:42 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:41:42 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:41:47 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:41:47 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:41:52 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:41:52 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:41:57 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:41:57 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:42:03 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:42:03 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:42:08 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:42:08 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:42:13 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:42:13 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:42:18 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:42:18 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:42:23 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:42:23 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:42:28 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:42:28 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:42:34 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:42:34 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:42:41 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:42:41 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:42:47 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:42:47 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:42:52 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:42:52 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:42:57 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:42:57 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:43:02 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:43:03 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:43:08 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:43:08 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:43:13 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:43:13 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:43:18 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:43:18 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal
+2022-02-04 17:43:24 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-rrlmj, kube-system/kube-proxy-kctwj
+2022-02-04 17:43:24 [!]  pod eviction error ("error evicting pod: istio-system/istiod-598fc46955-m4fzm: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-41-87.us-west-2.compute.internal
+2022-02-04 17:43:29 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-s8qtx, kube-system/kube-proxy-xvgdk
+2022-02-04 17:43:29 [!]  pod eviction error ("error evicting pod: istio-system/istio-egressgateway-676b59ddbd-zknfl: Cannot evict pod as it would violate the pod's disruption budget.") on node ip-192-168-20-217.us-west-2.compute.internal

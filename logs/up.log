@@ -1,0 +1,403 @@
+{
+    "Reservations": [
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-036d46416a34a611c",
+                    "InstanceId": "i-05ecd1890741ee249",
+                    "InstanceType": "t2.micro",
+                    "KeyName": "assignment",
+                    "LaunchTime": "2022-01-27T03:45:57+00:00",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-west-2c",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "ip-172-31-3-249.us-west-2.compute.internal",
+                    "PrivateIpAddress": "172.31.3.249",
+                    "ProductCodes": [],
+                    "PublicDnsName": "",
+                    "State": {
+                        "Code": 80,
+                        "Name": "stopped"
+                    },
+                    "StateTransitionReason": "User initiated (2022-01-27 03:52:59 GMT)",
+                    "SubnetId": "subnet-78e49625",
+                    "VpcId": "vpc-812234f9",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2022-01-27T03:45:58+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0a530e5c24a1d00fa"
+                            }
+                        }
+                    ],
+                    "ClientToken": "0998e2e7-8f9b-46c8-8b24-9380e15be91a",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2022-01-27T03:45:57+00:00",
+                                "AttachmentId": "eni-attach-017850976e77fa16a",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupName": "3Music service (port 30001)",
+                                    "GroupId": "sg-01f26b55482b5dd4c"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:e7:81:db:0c:5f",
+                            "NetworkInterfaceId": "eni-037f303a1bec6d824",
+                            "OwnerId": "593182245403",
+                            "PrivateDnsName": "ip-172-31-3-249.us-west-2.compute.internal",
+                            "PrivateIpAddress": "172.31.3.249",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-3-249.us-west-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.3.249"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-78e49625",
+                            "VpcId": "vpc-812234f9",
+                            "InterfaceType": "interface"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "3Music service (port 30001)",
+                            "GroupId": "sg-01f26b55482b5dd4c"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "StateReason": {
+                        "Code": "Client.UserInitiatedShutdown",
+                        "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+                    },
+                    "Tags": [
+                        {
+                            "Key": "mnemonic-name",
+                            "Value": "sleepy_poitras"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "optional",
+                        "HttpPutResponseHopLimit": 1,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2022-01-27T03:45:57+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    }
+                }
+            ],
+            "OwnerId": "593182245403",
+            "ReservationId": "r-0123a890a94fe1f6e"
+        },
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-0a60c83b81a2b2868",
+                    "InstanceId": "i-0f580d74a241c57e5",
+                    "InstanceType": "t1.micro",
+                    "KeyName": "assignment",
+                    "LaunchTime": "2022-01-27T06:49:33+00:00",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-west-2c",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "ip-172-31-3-147.us-west-2.compute.internal",
+                    "PrivateIpAddress": "172.31.3.147",
+                    "ProductCodes": [],
+                    "PublicDnsName": "",
+                    "State": {
+                        "Code": 80,
+                        "Name": "stopped"
+                    },
+                    "StateTransitionReason": "User initiated (2022-01-27 07:10:24 GMT)",
+                    "SubnetId": "subnet-78e49625",
+                    "VpcId": "vpc-812234f9",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2022-01-27T06:49:34+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0b13a7a43afb20072"
+                            }
+                        }
+                    ],
+                    "ClientToken": "",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2022-01-27T06:49:33+00:00",
+                                "AttachmentId": "eni-attach-0d1808b512c0fb948",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupName": "13Music service (port 30001)",
+                                    "GroupId": "sg-0bb7055c93542ef19"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:35:01:b8:70:31",
+                            "NetworkInterfaceId": "eni-0795f655720635d26",
+                            "OwnerId": "593182245403",
+                            "PrivateDnsName": "ip-172-31-3-147.us-west-2.compute.internal",
+                            "PrivateIpAddress": "172.31.3.147",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-3-147.us-west-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.3.147"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-78e49625",
+                            "VpcId": "vpc-812234f9",
+                            "InterfaceType": "interface"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/xvda",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "13Music service (port 30001)",
+                            "GroupId": "sg-0bb7055c93542ef19"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "StateReason": {
+                        "Code": "Client.UserInitiatedShutdown",
+                        "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+                    },
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "optional",
+                        "HttpPutResponseHopLimit": 1,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2022-01-27T06:49:33+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": true,
+                        "EnableResourceNameDnsAAAARecord": false
+                    }
+                }
+            ],
+            "OwnerId": "593182245403",
+            "ReservationId": "r-06ac6a25cd5a76f25"
+        },
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-036d46416a34a611c",
+                    "InstanceId": "i-074f2095a5312f7b8",
+                    "InstanceType": "t2.micro",
+                    "KeyName": "assignment",
+                    "LaunchTime": "2022-01-27T21:46:53+00:00",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-west-2c",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "ip-172-31-9-105.us-west-2.compute.internal",
+                    "PrivateIpAddress": "172.31.9.105",
+                    "ProductCodes": [],
+                    "PublicDnsName": "",
+                    "State": {
+                        "Code": 80,
+                        "Name": "stopped"
+                    },
+                    "StateTransitionReason": "User initiated (2022-02-03 04:55:40 GMT)",
+                    "SubnetId": "subnet-78e49625",
+                    "VpcId": "vpc-812234f9",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2022-01-27T21:46:54+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0260c9d00e1512e09"
+                            }
+                        }
+                    ],
+                    "ClientToken": "568143d3-cf4b-46ee-b72e-366ede4f8557",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2022-01-27T21:46:53+00:00",
+                                "AttachmentId": "eni-attach-093bec2fa041e38c1",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupName": "13Music service (port 30001)",
+                                    "GroupId": "sg-0bb7055c93542ef19"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:39:eb:0c:a5:a1",
+                            "NetworkInterfaceId": "eni-053e7674730a56d7e",
+                            "OwnerId": "593182245403",
+                            "PrivateDnsName": "ip-172-31-9-105.us-west-2.compute.internal",
+                            "PrivateIpAddress": "172.31.9.105",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-9-105.us-west-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.9.105"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-78e49625",
+                            "VpcId": "vpc-812234f9",
+                            "InterfaceType": "interface"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "13Music service (port 30001)",
+                            "GroupId": "sg-0bb7055c93542ef19"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "StateReason": {
+                        "Code": "Client.UserInitiatedShutdown",
+                        "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+                    },
+                    "Tags": [
+                        {
+                            "Key": "mnemonic-name",
+                            "Value": "compassionate_yalow"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "optional",
+                        "HttpPutResponseHopLimit": 1,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2022-01-27T21:46:53+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    }
+                }
+            ],
+            "OwnerId": "593182245403",
+            "ReservationId": "r-068393147c9465e09"
+        }
+    ]
+}

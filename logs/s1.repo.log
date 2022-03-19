@@ -1,0 +1,30 @@
+The push refers to repository [ghcr.io/rri197/cmpt756s1]
+15a0842542dd: Preparing
+1e021d57f97c: Preparing
+ed2e8f44491d: Preparing
+d7abab5b25b3: Preparing
+1d70a1a1f370: Preparing
+1c1dfd72029c: Preparing
+3382a8f4aa7e: Preparing
+3c08bad1e0e1: Preparing
+d80c74ef0232: Preparing
+3ba395cfe109: Preparing
+95cff0b90fb3: Preparing
+1c1dfd72029c: Waiting
+3382a8f4aa7e: Waiting
+3c08bad1e0e1: Waiting
+d80c74ef0232: Waiting
+3ba395cfe109: Waiting
+95cff0b90fb3: Waiting
+15a0842542dd: Layer already exists
+1d70a1a1f370: Layer already exists
+ed2e8f44491d: Layer already exists
+d7abab5b25b3: Layer already exists
+1e021d57f97c: Layer already exists
+1c1dfd72029c: Layer already exists
+d80c74ef0232: Layer already exists
+3382a8f4aa7e: Layer already exists
+3c08bad1e0e1: Layer already exists
+3ba395cfe109: Layer already exists
+95cff0b90fb3: Layer already exists
+v1: digest: sha256:8f5aa5639c85982b0903d32c65021ca891d8d758e3bbdfeacdf851c5cfcc1ab5 size: 2613
