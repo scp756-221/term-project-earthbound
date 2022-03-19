@@ -19,7 +19,7 @@ To be completed:
 
 ## Scripts to run the project
 1. Build and upload docker images to github.
-    - logs/s1.repo.log logs/s2-v1.repo.log logs/s3.repo.log logs/db.repo.log
+  - logs/s1.repo.log logs/s2-v1.repo.log logs/s3.repo.log logs/db.repo.log
 
 2. Start Amazon Kubernetes services.
   - make -f eks.mak start
