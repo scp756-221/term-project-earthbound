@@ -328,11 +328,11 @@ $(LOG_DIR)/s2-$(S2_VER).repo.log: s2/$(S2_VER)/Dockerfile s2/$(S2_VER)/app.py s2
 	$(DK) build $(ARCH) -t $(CREG)/$(REGID)/cmpt756s2:$(S2_VER) s2/$(S2_VER) | tee $(LOG_DIR)/s2-$(S2_VER).img.log
 	$(DK) push $(CREG)/$(REGID)/cmpt756s2:$(S2_VER) | tee $(LOG_DIR)/s2-$(S2_VER).repo.log
 
+# Build the s3 service
 $(LOG_DIR)/s3.repo.log: s3/Dockerfile s3/songs_list.py s3/recommendation_model.py s3/requirements.txt
 	make -f k8s.mak --no-print-directory registry-login
 	$(DK) build $(ARCH) -t $(CREG)/$(REGID)/cmpt756s3:$(APP_VER_TAG) s3 | tee $(LOG_DIR)/s3.img.log
 	$(DK) push $(CREG)/$(REGID)/cmpt756s3:$(APP_VER_TAG) | tee $(LOG_DIR)/s3.repo.log
-
 
 # Build the db service
 $(LOG_DIR)/db.repo.log: db/Dockerfile db/app.py db/requirements.txt
