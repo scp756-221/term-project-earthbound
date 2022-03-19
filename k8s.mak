@@ -153,6 +153,10 @@ shell-s2:
 	@echo Use the following command line to drop into the s2 service:
 	@echo   $(KC) -n $(APP_NS) exec -it deployment/cmpt756s2 --container cmpt756s2 -- bash
 
+shell-s3:
+	@echo Use the following command line to drop into the s3 service:
+	@echo   $(KC) -n $(APP_NS) exec -it deployment/cmpt756s3 --container cmpt756s3 -- bash
+
 shell-db:
 	@echo Use the following command line to drop into the db service:
 	@echo   $(KC) -n $(APP_NS) exec -it deployment/cmpt756db --container cmpt756db -- bash
