@@ -1,2 +1,6 @@
-results
+/target
+/.mvn/wrapper/*.jar
+.mvn
+.idea
+.github
 target
