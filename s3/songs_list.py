@@ -13,17 +13,18 @@ import pickle
 # Local modules
 from prometheus_flask_exporter import PrometheusMetrics
 import requests
-​
+
 import simplejson as json
-​
+from flask import jsonify, make_response
+
 # The path to the file (CSV format) containing the sample data
 DB_PATH='song_info.csv'
-recommendation_model=pickle.load (open('model.pkl','rb'))
+recommendation_model=pickle.load(open('model.pkl','rb'))
 # The unique exercise code
 # The EXER environment variable has a value specific to this exercise
 ucode = 's3'
 music = {
-    "name": "http://cmpt756db:30001/api/v1/music",
+    "name": "http://cmpt756s2:30001/api/v1/music",
     "endpoint": [
         "list_all",
         "get_song",
@@ -41,29 +42,29 @@ db = {
         "update"
     ]
 }
-​
-​
+
+
 # The application
 app = Flask(__name__)
 bp = Blueprint('app', __name__)
-​
-​
+
+
 metrics = PrometheusMetrics(app)
 metrics.info('app_info', 'Song list process')
 database = {}
-​
+
 @bp.route('/health')
 @metrics.do_not_track()
 def health():
     return Response("", status=200, mimetype="application/json")
-​
-​
+
+
 @bp.route('/readiness')
 @metrics.do_not_track()
 def readiness():
     return Response("", status=200, mimetype="application/json")
-​
-​
+
+
 @bp.route('/obtainall', methods=['GET'])
 def list_all():
     headers = request.headers
@@ -74,7 +75,7 @@ def list_all():
                         mimetype='application/json')
     # list all songs here
     return {}
-​
+
 @bp.route('/recommendation', methods=['POST'])
 def recommendation_fn():
     content = request.get_json()
@@ -89,9 +90,9 @@ def recommendation_fn():
             "output": recommendation
             }
     return response
-​
+
     
-​
+
 # @bp.route('/delete_in_music_service/<Id1>', methods=['DELETE'])
 # def delete_in_music_service(Id1):
 #     url = music['name'] + '/' + music['endpoint'][3]
@@ -102,41 +103,41 @@ def recommendation_fn():
     
 #     return {}
     
-​
+
 @bp.route('/obtain/<Id>', methods=['GET'])
 def get_song(Id):
     headers = request.headers
     # check header here
+    print("123")
     if 'Authorization' not in headers:
         return Response(json.dumps({"error": "missing auth"}),
                         status=401,
                         mimetype='application/json')
     payload = {"objtype": "music", "objkey": Id}
-    url = music['name'] + '/' + music['endpoint'][1]+'/'+Id
-    response = requests.get(
+    print("45")
+    url = music['name']+'/'+Id
+    print("1")
+    print("78")
+    response=requests.get(
         url,
         headers={'Authorization': headers['Authorization']})
-    return (response.json())
-​
-​
+    return response.json()
+
+
 @bp.route('/create', methods=['POST'])
 def create_song():
-    try:
-        content = request.get_json()
-        Artist = content['Artist']
-        Song_name= content['SongTitle']
-    except Exception:
-        return app.make_response(
-            ({"Message": "Error reading arguments"}, 400)
-            )
+    content = request.get_json()
+    print(content)
+    Artist = content['Artist']
+    Song_name= content['SongTitle']
     url = music['name'] + '/'
-    response = requests.post(
+    print("1")
+    response =requests.post(
         url,
         json={"Artist": Artist, "SongTitle": Song_name},
         headers={'Authorization': 'Bearer A'})
-    return response
-​
-​
+    return response.json()
+
 @bp.route('/delete/<Id>', methods=['DELETE'])
 def delete_song(Id):
     headers = request.headers
@@ -151,8 +152,7 @@ def delete_song(Id):
         url,
         headers={'Authorization': headers['Authorization']})
     return (response.json())
-​
-​
+
 @bp.route('/restore', methods=['GET'])
 def restore_songs():
     global database
@@ -167,13 +167,13 @@ def restore_songs():
         for Song_name, Length_of_the_music, Artist, Producers, Language, Rating_of_the_song, Released_Year, Id, genre in rdr:
             database[Id] = (Song_name, Length_of_the_music, Artist, Producers, Language, Rating_of_the_song, Released_Year, genre)
     return database
-​
+
 app.register_blueprint(bp, url_prefix='/api/v1/songs_list/')
-​
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit(-1)
-​
+
     #load_db()
     #app.logger.error("Unique code: {}".format(ucode))
     p = int(sys.argv[1])
