@@ -86,5 +86,18 @@ class BasicSimulation extends Simulation {
         .formParam("company", "37")
     )
 
+    object CreateS2 {
+        val create = 
+            exec(http("request_8")
+        .get("/computers?p=4")
+    )
+    .pause(5)
+    .exec(
+      http("request_9")
+        .get("/computers/new")
+    )
+
+    }
+
   setUp(scn.inject(atOnceUsers(1)).protocols(httpProtocol))
 }
