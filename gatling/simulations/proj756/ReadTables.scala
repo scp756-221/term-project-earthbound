@@ -148,7 +148,7 @@ class ReadMusicSim extends ReadTablesSim {
   ).protocols(httpProtocol)
 }
 
-class ReadPlaylistSim extends ReadTabesSim {
+class ReadPlaylistSim extends ReadTablesSim {
   val scnReadPlaylist = scenario("ReadPlaylist")
     .exec(RPlaylist.rplaylist)
 
