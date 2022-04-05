@@ -56,7 +56,7 @@ object RUser {
 
 object RPlaylist {
 
-  val feeder = csv("song_info.csv").eager.circular
+  val feeder = csv("music.csv").eager.circular
 
   val rplaylist = forever("i") {
     feed(feeder)
