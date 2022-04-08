@@ -1,0 +1,8 @@
+# Header for ConfigMap built from mu
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: song-info
+data:
+  song_info.csv: |
