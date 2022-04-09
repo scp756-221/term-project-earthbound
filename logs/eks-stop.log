@@ -1,0 +1,42 @@
+2022-04-08 23:09:52 [ℹ]  eksctl version 0.77.0
+2022-04-08 23:09:52 [ℹ]  using region us-west-2
+2022-04-08 23:09:52 [ℹ]  deleting EKS cluster "aws756"
+2022-04-08 23:09:52 [ℹ]  will drain 0 unmanaged nodegroup(s) in cluster "aws756"
+2022-04-08 23:09:53 [ℹ]  deleted 0 Fargate profile(s)
+2022-04-08 23:09:54 [✔]  kubeconfig has been updated
+2022-04-08 23:09:54 [ℹ]  cleaning up AWS load balancers created by Kubernetes objects of Kind Service or Ingress
+2022-04-08 23:10:32 [ℹ]  
+2 sequential tasks: { delete nodegroup "worker-nodes", delete cluster control plane "aws756" [async] 
+}
+2022-04-08 23:10:32 [ℹ]  will delete stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:10:32 [ℹ]  waiting for stack "eksctl-aws756-nodegroup-worker-nodes" to get deleted
+2022-04-08 23:10:32 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:10:48 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:11:05 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:11:25 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:11:42 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:12:02 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:12:22 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:12:41 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:12:58 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:13:15 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:13:32 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:13:49 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:14:07 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:14:23 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:14:39 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:14:57 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:15:13 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:15:30 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:15:48 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:16:07 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:16:24 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:16:44 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:17:01 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:17:20 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:17:37 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:17:53 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:18:10 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:18:27 [ℹ]  waiting for CloudFormation stack "eksctl-aws756-nodegroup-worker-nodes"
+2022-04-08 23:18:27 [ℹ]  will delete stack "eksctl-aws756-cluster"
+2022-04-08 23:18:27 [✔]  all cluster resources were deleted

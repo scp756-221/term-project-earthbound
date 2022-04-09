@@ -1,0 +1,18 @@
+The push refers to repository [docker.io/rri197/foo/cmpt756db]
+ed100d45e3ba: Preparing
+311e82536fc5: Preparing
+192e07b6058f: Preparing
+d7abab5b25b3: Preparing
+1d70a1a1f370: Preparing
+1c1dfd72029c: Preparing
+3382a8f4aa7e: Preparing
+3c08bad1e0e1: Preparing
+d80c74ef0232: Preparing
+3ba395cfe109: Preparing
+95cff0b90fb3: Preparing
+3382a8f4aa7e: Waiting
+3c08bad1e0e1: Waiting
+d80c74ef0232: Waiting
+3ba395cfe109: Waiting
+95cff0b90fb3: Waiting
+1c1dfd72029c: Waiting
