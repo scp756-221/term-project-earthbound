@@ -15,8 +15,8 @@ spec:
       tcp:
         maxConnections: 5
       http:
-        http1MaxPendingRequest: 5
-        maxRequestsPerSecond: 1
+        http1MaxPendingRequests: 5
+        maxRequestsPerConnection: 1
     outlierDetection:
       consecutive5xxErrors: 1
       interval: 5s
