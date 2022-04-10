@@ -6,5 +6,5 @@ serviceaccount/svc-db unchanged
 serviceaccount/svc-loader unchanged
 secret/svc-loader-token unchanged
 deployment.apps/cmpt756db unchanged
-servicemonitor.monitoring.coreos.com/cmpt756db unchanged
+servicemonitor.monitoring.coreos.com/cmpt756db created
 virtualservice.networking.istio.io/cmpt756db unchanged

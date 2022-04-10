@@ -1,2 +1,17 @@
 helm install --namespace istio-system --set auth.strategy=anonymous --repo https://kiali.org/helm-charts kiali-server kiali-server
-kiali.kiali.io/kiali unchanged
+NAME: kiali-operator
+LAST DEPLOYED: Sat Apr  9 19:12:37 2022
+NAMESPACE: kiali-operator
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Welcome to Kiali! For more details on Kiali, see: https://kiali.io
+
+The Kiali Operator [v1.49.0] has been installed in namespace [kiali-operator]. It will be ready soon.
+You have elected to install a Kiali CR in the namespace [istio-system]. You should be able to access Kiali soon.
+
+If you ever want to uninstall the Kiali Operator, remember to delete the Kiali CR first before uninstalling the operator to give the operator a chance to uninstall and remove all the Kiali Server resources.
+
+(Helm: Chart=[kiali-operator], Release=[kiali-operator], Version=[1.49.0])
+kiali.kiali.io/kiali configured
