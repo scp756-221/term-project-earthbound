@@ -54,13 +54,13 @@ object RUser {
 
 }
 
-object RPlaylist {
+object RRecommendation {
 
   val feeder = csv("music.csv").eager.circular
 
-  val rplaylist = forever("i") {
+  val rrecommendation = forever("i") {
     feed(feeder)
-    .exec(http("RPlaylist ${i}")
+    .exec(http("RRecommendation ${i}")
       .get("/api/v1/songs_list/obtain/${UUID}"))
     .pause(1)
   }
@@ -148,12 +148,12 @@ class ReadMusicSim extends ReadTablesSim {
   ).protocols(httpProtocol)
 }
 
-class ReadPlaylistSim extends ReadTablesSim {
-  val scnReadPlaylist = scenario("ReadPlaylist")
-    .exec(RPlaylist.rplaylist)
+class ReadRecommendationSim extends ReadTablesSim {
+  val scnReadRecommendation = scenario("ReadRecommendation")
+    .exec(RRecommendation.rrecommendation)
 
   setUp(
-    scnReadPlaylist.inject(atOnceUsers(Utility.envVarToInt("USERS", 1)))
+    scnReadRecommendation.inject(atOnceUsers(Utility.envVarToInt("USERS", 1)))
   ).protocols(httpProtocol)
 }
 
