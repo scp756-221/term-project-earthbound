@@ -61,7 +61,7 @@ metadata:
     app: cmpt756db
     version: v1
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: cmpt756db

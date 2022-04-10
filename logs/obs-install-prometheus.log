@@ -1,4 +1,14 @@
 helm install c756 --namespace istio-system prometheus-community/kube-prometheus-stack
-service/prom-ingress unchanged
-service/grafana-ingress unchanged
-configmap/c756-dashboard unchanged
+NAME: c756
+LAST DEPLOYED: Sat Apr  9 18:58:13 2022
+NAMESPACE: istio-system
+STATUS: deployed
+REVISION: 1
+NOTES:
+kube-prometheus-stack has been installed. Check its status by running:
+  kubectl --namespace istio-system get pods -l "release=c756"
+
+Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+service/prom-ingress created
+service/grafana-ingress created
+configmap/c756-dashboard created
