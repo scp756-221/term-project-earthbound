@@ -3,9 +3,9 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: cmpt756s2-v1
+  name: cmpt756s2
 spec:
-  host: cmpt756s2-v1
+  host: cmpt756s2
   subsets:
   - name: v1
     labels:
