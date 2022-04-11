@@ -25,8 +25,10 @@ NS=c756ns
 CLUSTER_NAME=aws756
 EKS_CTX=aws756
 
+NNODES=5
 
 NGROUP=worker-nodes
+NGROUP2=worker-nodes-2
 NTYPE=t3.medium
 REGION=us-west-2
 KVER=1.21
@@ -37,12 +39,17 @@ start: showcontext
 	# Use back-ticks for subshell because $(...) notation is used by make
 	$(KC) config rename-context `$(KC) config current-context` $(EKS_CTX) | tee -a $(LOG_DIR)/eks-start.log
 
+addcluster: 
+	$(EKS) create nodegroup --cluster $(CLUSTER_NAME) --name $(NGROUP2) --node-type t3.2xlarge --nodes 2 --nodes-min 2 --nodes-max 5 --managed | tee $(LOG_DIR)/eks-addcluster.log
+scale:
+	$(EKS) scale nodegroup --name=$(NGROUP2) --cluster $(CLUSTER_NAME) --nodes $(NNODES) 
+
 stop:
 	$(EKS) delete cluster --name $(CLUSTER_NAME) --region $(REGION) | tee $(LOG_DIR)/eks-stop.log
 	$(KC) config delete-context $(EKS_CTX) | tee -a $(LOG_DIR)/eks-stop.log
 
 up:
-	$(EKS) create nodegroup --cluster $(CLUSTER_NAME) --region $(REGION) --name $(NGROUP) --node-type $(NTYPE) --nodes 2 --nodes-min 2 --nodes-min 2 --managed | tee $(LOG_DIR)/eks-up.log
+	$(EKS) create nodegroup --cluster $(CLUSTER_NAME) --region $(REGION) --name $(NGROUP) --node-type $(NTYPE) --nodes 2 --nodes-min 2 --nodes-max 2 --managed | tee $(LOG_DIR)/eks-up.log
 
 down:
 	$(EKS) delete nodegroup --cluster=$(CLUSTER_NAME) --region $(REGION) --name=$(NGROUP) | tee $(LOG_DIR)/eks-down.log

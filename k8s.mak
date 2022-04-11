@@ -63,7 +63,7 @@ templates:
 # 2. Current context is a running Kubernetes cluster (make -f {az,eks,gcp,mk}.mak start)
 #
 #  Nov 2021: Kiali is causing problems so do not deploy
-#provision: istio prom kiali deploy
+# provision: istio prom kiali deploy
 provision: istio prom deploy
 
 # --- deploy: Deploy and monitor the three microservices
@@ -114,7 +114,7 @@ scratch: clean
 
 # --- clean: Delete all the application log files
 clean:
-	/bin/rm -f $(LOG_DIR)/{s1,s2,s3,db,gw,monvs}*.log $(LOG_DIR)/rollout*.log
+	/bin/rm -f $(LOG_DIR)/{s1,s2,s3,db,gw,monvs,dynamodb}*.log $(LOG_DIR)/rollout*.log
 
 # --- dashboard: Start the standard Kubernetes dashboard
 # NOTE:  Before invoking this, the dashboard must be installed and a service account created
@@ -295,10 +295,10 @@ s1: $(LOG_DIR)/s1.repo.log cluster/s1.yaml cluster/s1-sm.yaml cluster/s1-vs.yaml
 	$(KC) -n $(APP_NS) apply -f cluster/s1-vs.yaml | tee -a $(LOG_DIR)/s1.log
 
 # Update S2 and associated monitoring, rebuilding if necessary
-s2: rollout-s2 cluster/s2-svc.yaml cluster/s2-sm.yaml cluster/s2-vs.yaml
+s2: rollout-s2 cluster/s2-svc.yaml cluster/s2-sm.yaml cluster/s2-vs-canary.yaml
 	$(KC) -n $(APP_NS) apply -f cluster/s2-svc.yaml | tee $(LOG_DIR)/s2.log
 	$(KC) -n $(APP_NS) apply -f cluster/s2-sm.yaml | tee -a $(LOG_DIR)/s2.log
-	$(KC) -n $(APP_NS) apply -f cluster/s2-vs.yaml | tee -a $(LOG_DIR)/s2.log
+	$(KC) -n $(APP_NS) apply -f cluster/s2-vs-canary.yaml | tee -a $(LOG_DIR)/s2.log
 
 s3: rollout-s3 cluster/s3-svc.yaml cluster/s3-sm.yaml cluster/s3-vs.yaml
 	$(KC) -n $(APP_NS) apply -f cluster/s3-svc.yaml | tee $(LOG_DIR)/s3.log
