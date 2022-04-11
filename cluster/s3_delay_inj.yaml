@@ -9,7 +9,7 @@ spec:
       delay:
         fixedDelay: 7s
         percentag:
-          value: 100
+          value: 40
     route:
     - destination:
         host: cmpt756s3
