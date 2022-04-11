@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+...
+spec:
+  hosts:
+  - cmpt756s3
+  http:
+  - fault:
+      abort:
+        httpStatus: 500
+        percentage:
+          value: 40
+    route:
+    - destination:
+        host: cmpt756s3
+        subset: v1
+  - route:
+    - destination:
+        host: cmpt756s3
+        subset: v1
+
