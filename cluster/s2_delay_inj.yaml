@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+...
+spec:
+  hosts:
+  - cmpt756s2
+  http:
+  - fault:
+      delay:
+        fixedDelay: 7s
+        percentage:
+          value: 100
+    route:
+    - destination:
+        host: cmpt756s2
+        subset: v1
+  - route:
+    - destination:
+        host: cmpt756s2
+        subset: v1
