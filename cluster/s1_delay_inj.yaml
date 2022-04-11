@@ -4,11 +4,8 @@ kind: VirtualService
 metadata:
   name: cmpt756s1
 spec:
-  host: cmpt756s1
-  subsets:
-  - name: v1
-    labels:
-      version: v1
+  host: 
+  - cmpt756s1
   http:
   - fault:
       delay:
@@ -18,8 +15,12 @@ spec:
     route: 
     - destination: 
         host: cmpt756s1
+        port:
+          number: 30000
         subset: v1
   - route:
     - destination: 
         host: cmpt756s1
+        port:
+          number: 30000
         subset: v1   
