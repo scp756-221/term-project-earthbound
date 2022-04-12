@@ -30,10 +30,13 @@ Completed Tasks:
 5. Monitoring the services.
   - Start k9s to track the health and staus of services.
 
-6. Dashboard building using grafana.
+6. Gathering metrics using Prometheus
+  - make -f k8s.mak prometheus-url
+
+7. Dashboard building using grafana.
   - make -f k8s.mak grafana-url
 
-7. Monitoring traffic using Kiali.
+8. Monitoring traffic using Kiali.
   - mak -f k8s.mak kiali-url
   
 ### 1. Instantiate the template files
