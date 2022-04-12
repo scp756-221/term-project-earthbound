@@ -198,11 +198,11 @@ Assorted scripts that you can pick and choose from:
 └── ./tools
 ```
 
-3. Monitoring 
+### 3. Monitoring 
 
 Three tools are used to monitor the distributed application and microservices: Grafana, Prometheus and Kiali
 
-1) Provision and Deploy
+## i. Provision and Deploy
 First, copy your GitHub Repository token to cluster/ghcr.io-token.txt.
 
 Install istio, prometheus, kiali, and their dependencies and deploy the microservices by running
@@ -211,7 +211,7 @@ Install istio, prometheus, kiali, and their dependencies and deploy the microser
 $ make -f k8s.mak provision
 ~~~
 
-8. Grafana
+## ii. Grafana
 Get Grafana URL, run:
 
 ~~~
@@ -221,14 +221,14 @@ Click the url and login with: User: 'admin' Password: 'prom-operator'
 
 After signon, in Grafana home screen, navigate to the dashboard by hovering on the “Dashboards” icon on the left. Select “Browse” from the menu it displays a list of dashboards. Click on c756 transactions.
 
-9. Prometheus
+## iii. Prometheus
 Get Prometheus URL, run:
 
 ~~~
 $ make -f k8s.mak prometheus-url
 ~~~
 
-10. Kiali
+## iv. Kiali
 Get Kiali URL, run:
 
 ~~~
