@@ -136,11 +136,6 @@ These are templates for the course and should be removed.
 │   │   └── ./s2/v1/unique_code-tpl.py
 ```
 
-Support material for using this repo in the CSIL lab.
-```
-├── ./csil-build
-```
-
 The core of the microservices. `s2/v1.1`, `s2/v2`, and `s2/standalone`  are for use with Assignments. For your term project, work and/or derive from the `v1` version.
 ```
 ├── ./db
@@ -168,11 +163,6 @@ The core of the microservices. `s2/v1.1`, `s2/v2`, and `s2/standalone`  are for 
 │       └── ./gatling/target/test-classes
 │           ├── ./gatling/target/test-classes/computerdatabase
 │           └── ./gatling/target/test-classes/proj756
-```
-
-Support material for using this repo with GCP (GKE).
-```
-├── ./gcloud
 ```
 
 A small job for loading DynamoDB with some fixtures.
@@ -205,3 +195,34 @@ Assorted scripts that you can pick and choose from:
 ```
 └── ./tools
 ```
+3. Monitoring 
+Three tools are used to monitor the distributed application and microservices: Grafana, Prometheus and Kiali
+├── ./
+1) Provision and Deploy
+First, copy your GitHub Repository token to cluster/ghcr.io-token.txt.
+
+Install istio, prometheus, kiali, and their dependencies and deploy the microservices by running
+~~~
+$ make -f k8s.mak provision
+~~~
+
+8. Grafana
+Get Grafana URL, run:
+~~~
+$ make -f k8s.mak grafana-url
+~~~
+Click the url and login with: User: 'admin' Password: 'prom-operator'
+
+After signon, in Grafana home screen, navigate to the dashboard by hovering on the “Dashboards” icon on the left. Select “Browse” from the menu it displays a list of dashboards. Click on c756 transactions.
+
+9. Prometheus
+Get Prometheus URL, run:
+~~~
+$ make -f k8s.mak prometheus-url
+~~~
+
+10. Kiali
+Get Kiali URL, run:
+~~~
+$ make -f k8s.mak kiali-url
+~~~
