@@ -236,7 +236,7 @@ $ ./gatling-250-music.sh
 $ ./gatling-250-recommendation.sh
 ~~~
 
-## To Terminate Gatling containers execute the below commands
+# To Terminate Gatling containers execute the below commands
 ~~~
 ./tools/kill-gatling.sh
 ~~~
