@@ -174,7 +174,6 @@ Logs files are saved here to reduce clutter.
 ```
 ├── ./logs
 ```
-```
 
 Deprecated material for operating the API via Postman.
 ```
@@ -195,19 +194,23 @@ Assorted scripts that you can pick and choose from:
 ```
 └── ./tools
 ```
+
 3. Monitoring 
+
 Three tools are used to monitor the distributed application and microservices: Grafana, Prometheus and Kiali
-├── ./
+
 1) Provision and Deploy
 First, copy your GitHub Repository token to cluster/ghcr.io-token.txt.
 
 Install istio, prometheus, kiali, and their dependencies and deploy the microservices by running
+
 ~~~
 $ make -f k8s.mak provision
 ~~~
 
 8. Grafana
 Get Grafana URL, run:
+
 ~~~
 $ make -f k8s.mak grafana-url
 ~~~
@@ -217,12 +220,14 @@ After signon, in Grafana home screen, navigate to the dashboard by hovering on t
 
 9. Prometheus
 Get Prometheus URL, run:
+
 ~~~
 $ make -f k8s.mak prometheus-url
 ~~~
 
 10. Kiali
 Get Kiali URL, run:
+
 ~~~
 $ make -f k8s.mak kiali-url
 ~~~
