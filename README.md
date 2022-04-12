@@ -198,7 +198,7 @@ Assorted scripts that you can pick and choose from:
 └── ./tools
 ```
 
-### 3. Monitoring 
+## 3. Monitoring 
 
 Three tools are used to monitor the distributed application and microservices: Grafana, Prometheus and Kiali
 
