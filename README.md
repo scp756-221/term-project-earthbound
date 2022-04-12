@@ -211,7 +211,7 @@ Install istio, prometheus, kiali, and their dependencies and deploy the microser
 $ make -f k8s.mak provision
 ~~~
 
-## ii. Grafana
+### ii. Grafana
 Get Grafana URL, run:
 
 ~~~
@@ -221,14 +221,14 @@ Click the url and login with: User: 'admin' Password: 'prom-operator'
 
 After signon, in Grafana home screen, navigate to the dashboard by hovering on the “Dashboards” icon on the left. Select “Browse” from the menu it displays a list of dashboards. Click on c756 transactions.
 
-## iii. Prometheus
+### iii. Prometheus
 Get Prometheus URL, run:
 
 ~~~
 $ make -f k8s.mak prometheus-url
 ~~~
 
-## iv. Kiali
+### iv. Kiali
 Get Kiali URL, run:
 
 ~~~
