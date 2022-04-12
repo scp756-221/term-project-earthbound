@@ -3,6 +3,7 @@
 This is the course repo for CMPT 756 Project (Spring 2022)
 
 We have decided to implement a songs_list api in addition to the s1 and s2 services. We have made a lot of cross api calls between s3 and s2. Please find the below architecture for our microservices.
+
 ![Mircroservice-Architecture_Designs1](https://user-images.githubusercontent.com/97494687/159112174-e87c2118-b40f-4160-bf4b-de9acf32af47.jpg)
 
 Completed Tasks:
