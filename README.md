@@ -1,6 +1,6 @@
 # SFU CMPT 756 main project directory
 
-This is the course repo for CMPT 756 Project(Spring 2022)
+This is the course repo for CMPT 756 Project (Spring 2022)
 
 We have decided to implement a songs_list api in addition to the s1 and s2 services. We have made a lot of cross api calls between s3 and s2. Please find the below architecture for our microservices.
 ![Mircroservice-Architecture_Designs1](https://user-images.githubusercontent.com/97494687/159112174-e87c2118-b40f-4160-bf4b-de9acf32af47.jpg)
@@ -8,14 +8,11 @@ We have decided to implement a songs_list api in addition to the s1 and s2 servi
 Completed Tasks:
 1) Building Microservices.
 2) Deploying containers on kubernetes service.
-
-To be completed:
-1)Load Testing using gatling.
-2)Metrics gathering using Prometheus.
-3)Dashboard building using grafana.
-4)Observing the failure points of a system.
-
-
+3) Load Testing using gatling.
+4) Metrics gathering using Prometheus.
+5) Dashboard building using grafana.
+6) Monitoring traffic using Kiali
+7) Observing the failure points of a system.
 
 ## Scripts to run the project
 1. Build and upload docker images to github.
@@ -32,6 +29,12 @@ To be completed:
  
 5. Monitoring the services.
   - Start k9s to track the health and staus of services.
+
+6. Dashboard building using grafana.
+  - make -f k8s.mak grafana-url
+
+7. Monitoring traffic using Kiali.
+  - mak -f k8s.mak kiali-url
   
 ### 1. Instantiate the template files
 
@@ -181,10 +184,6 @@ Logs files are saved here to reduce clutter.
 ```
 ├── ./logs
 ```
-
-Assignment 4's CLI for the Music service. It's non-core to the Music microservices. At present, it is only useable for the Intel architecture. If you are working from an M1 Mac, you will not be able to build/use this. The workaround is to build/run from an (Intel) EC2 instance.
-```
-├── ./mcli
 ```
 
 Deprecated material for operating the API via Postman.
