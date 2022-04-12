@@ -234,3 +234,22 @@ Get Kiali URL, run:
 ~~~
 $ make -f k8s.mak kiali-url
 ~~~
+
+### v. Gatling 
+Run the following commands from your host computer. This will put an instant load of 250 users for each microservice
+
+~~~
+$ ./gatling-250-user.sh
+$ ./gatling-250-music.sh
+$ ./gatling-250-recommendation.sh
+~~~
+
+### vi. To Terminate Gatling containers execute the below commands
+~~~
+./tools/kill-gatling.sh
+~~~
+
+### vii. To stop Amazon EKS cluster
+~~~
+$ make -f eks.mak stop
+~~~
